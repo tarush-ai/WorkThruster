@@ -1,7 +1,8 @@
 import getpass
 import os
 
-os.environ["OPENAI_API_KEY"] = "REMOVED_OPENAI_API_KEY"
+if not os.environ.get("OPENAI_API_KEY"):
+    os.environ["OPENAI_API_KEY"] = getpass.getpass("Enter your OpenAI API key: ")
 
 from langchain_openai import ChatOpenAI
 

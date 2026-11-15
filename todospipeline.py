@@ -5,7 +5,8 @@ import threading
 from langchain_openai import ChatOpenAI
 import emailGetter
 
-os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY_HERE"
+if not os.environ.get("OPENAI_API_KEY"):
+    raise RuntimeError("Set the OPENAI_API_KEY environment variable before running.")
 
 llm = ChatOpenAI(model="gpt-4o-mini")
 

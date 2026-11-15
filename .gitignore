@@ -6,3 +6,9 @@ venv/
 
 # Ignore logs
 *.log
+
+# Ignore secrets / credentials (Gmail OAuth client + cached token, env files)
+.env
+.env.*
+credentials.json
+token.pickle
